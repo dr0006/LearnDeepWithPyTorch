@@ -106,7 +106,7 @@ def infer(model, params_file_path, infer_path):
 
 # 加载模型参数并进行预测
 # infer_path = '../../data/infer_3.png'  # 待推理图像的路径
-infer_path = '../../data/4.png'  # 待推理图像的路径
+infer_path = '../../MNIST_test/4.png'  # 待推理图像的路径
 params_file_path = os.path.join(model_save_dir, 'mnist.pdparams')  # 模型参数路径
 prediction = infer(model, params_file_path, infer_path)  # 进行预测
 print(f"推测的图像标签为: {prediction}")  # 输出预测结果

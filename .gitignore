@@ -153,3 +153,5 @@ cython_debug/
 /.idea/
 /LearnDeepWithPyTorch.iml
 /code/data/MNIST/
+/data/
+/code/data/images/

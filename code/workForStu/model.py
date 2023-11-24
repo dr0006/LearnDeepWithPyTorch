@@ -25,3 +25,5 @@ class FeedforwardNeuralNetModel(nn.Module):
         out = self.relu(out)
         out = self.fc2(out)
         return out
+
+

@@ -30,7 +30,7 @@ transform = transforms.Compose([
 ])
 
 # 加载图片
-image_path = '../../data/infer_3.png'
+image_path = '../../MNIST_test/infer_3.png'
 image = Image.open(image_path)
 
 # 处理图片

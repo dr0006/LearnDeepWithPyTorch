@@ -25,7 +25,7 @@ transform = transforms.Compose([
 ])
 
 # 下载数据集假如没下载，root目录下存在就不用重复下载
-test_dataset = MNIST(root='../../data', train=False, transform=transform, download=True)
+test_dataset = MNIST(root='../../data', train=False, transform=transform, download=False)
 test_loader = DataLoader(dataset=test_dataset, batch_size=64, shuffle=False)
 
 # 加载模型
@@ -43,6 +43,6 @@ with torch.no_grad():
         outputs = model(images)
         _, predicted = torch.max(outputs, 1)
         total += labels.size(0)
-        correct += (predicted == labels).sum().item()
+        correct += torch.Tensor(predicted == labels).sum().item()
 
 print(f'Accuracy of the network on the 10000 test images: {100 * correct / total:.2f}%')
