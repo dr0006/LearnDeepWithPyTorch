@@ -5,7 +5,7 @@
 ----
 
 学习通作业  
-[workForStu](./code/workForStu)
+[workForStu](./code/DR006.ipynb)
 
 1. 手写数字识别(前馈神经网络)
 2. MINST(深度学习网络)
