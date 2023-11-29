@@ -9,16 +9,33 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 from matplotlib import pyplot as plt
+import torch.nn as nn
 
-# 导入模型定义类
-from code.workForStu.model import FeedforwardNeuralNetModel
+
+# 定义前馈神经网络模型
+class FeedforwardNeuralNetModel(nn.Module):
+    def __init__(self):
+        super(FeedforwardNeuralNetModel, self).__init__()
+        # 28x28 = 784
+        self.fc1 = nn.Linear(784, 128)
+        self.relu = nn.ReLU()  # relu 激活函数
+        self.fc2 = nn.Linear(128, 10)  # 输出10，0-9
+
+    def forward(self, x):
+        # Flatten the image
+        x = x.view(-1, 784)
+        out = self.fc1(x)
+        out = self.relu(out)
+        out = self.fc2(out)
+        return out
+
 
 # 设备配置
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 加载模型
 model = FeedforwardNeuralNetModel().to(device)
-model.load_state_dict(torch.load('./hand_write_model.pth', map_location=device))
+model.load_state_dict(torch.load('./model/hand_write_model.pth', map_location=device))
 model.eval()
 
 # 图像处理转换器
@@ -30,7 +47,7 @@ transform = transforms.Compose([
 ])
 
 # 加载图片
-image_path = '../../MNIST_test/infer_3.png'
+image_path = r'X:\Coding\Github\LearnDeepWithPyTorch\data\images\test\2_538.png'
 image = Image.open(image_path)
 
 # 处理图片

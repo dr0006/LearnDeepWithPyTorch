@@ -12,8 +12,8 @@ from datetime import datetime
 from PyQt5.QtGui import QTextOption
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog, QTextEdit
 
-from code.hand_write_CNN.model import ResNet, to_device, get_default_device
-from code.hand_write_CNN.tools.predict_img import predict_img
+from hand_write_CNN.model import ResNet, to_device, get_default_device
+from hand_write_CNN.tools.predict_img import predict_img
 
 
 class PredictionApp(QWidget):
@@ -38,7 +38,7 @@ class PredictionApp(QWidget):
         # 预测结果展示
         self.lbl_result = QLabel('预测结果：', self)
 
-        # 识别记录展示（使用 QTextEdit 替代 QLabel）
+        # 识别记录展示（使用 QTextEdit 替代 QLabel）带滑动条
         self.text_edit_records = QTextEdit(self)
         self.text_edit_records.setReadOnly(True)
         self.text_edit_records.setWordWrapMode(QTextOption.NoWrap)  # 禁用自动换行

@@ -9,8 +9,8 @@ import torch
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 
-from code.hand_write_CNN.config import transformers
-from code.hand_write_CNN.model import ResNet, get_default_device, to_device
+from hand_write_CNN.config import transformers
+from hand_write_CNN.model import ResNet, get_default_device, to_device
 
 test_dataset = MNIST(root='../../data', train=False, transform=transformers['original'], download=False)
 test_loader = DataLoader(dataset=test_dataset, batch_size=64, shuffle=False)

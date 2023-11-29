@@ -5,8 +5,8 @@
 @Time  : 2023/11/24 10:51
 @Description:
 """
-from code.hand_write_CNN.model import ResNet, get_default_device, to_device
-from code.hand_write_CNN.tools.predict_img import predict_img
+from hand_write_CNN.model import ResNet, get_default_device, to_device
+from hand_write_CNN.tools.predict_img import predict_img
 
 device = get_default_device()
 print("Using device:{}".format(device))

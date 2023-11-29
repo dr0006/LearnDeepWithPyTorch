@@ -8,14 +8,14 @@
 from torch.utils.data import random_split, DataLoader
 from torchvision.datasets import MNIST
 
-from code.hand_write_CNN.config import transformers, batch_size, num_epochs, lr, opt_func
-from code.hand_write_CNN.model import ResNet, get_default_device, DeviceDataLoader, to_device
-from code.hand_write_CNN.tools.my_tools import plot_accuracies, plot_losses
+from hand_write_CNN.config import transformers, batch_size, num_epochs, lr, opt_func
+from hand_write_CNN.model import ResNet, get_default_device, DeviceDataLoader, to_device
+from hand_write_CNN.tools.my_tools import plot_accuracies, plot_losses
 
 if __name__ == '__main__':
     # 下载数据集
-    train_dataset = MNIST(root='../../../data', train=True, transform=transformers['original'], download=False)
-    test_dataset = MNIST(root='../../../data', train=False, transform=transformers['original'], download=False)  # 测试集
+    train_dataset = MNIST(root='../data', train=True, transform=transformers['original'], download=False)
+    test_dataset = MNIST(root='../data', train=False, transform=transformers['original'], download=False)  # 测试集
 
     # 划分训练集为训练集和验证集
     train_dataset, val_dataset = random_split(train_dataset, [55000, 5000])

@@ -93,17 +93,11 @@ class MnistParser:
 def change_and_save():
     mnist = MnistParser()
 
-    # trainImageFile = './train-images.idx3-ubyte'
-    # _, _, _, images = mnist.load_image(trainImageFile)
-    # trainLabelFile = './train-labels.idx1-ubyte'
-    # _, labels = mnist.load_labels(trainLabelFile)
-    # mnist.visualaztion(images, labels, "./images/train/")
-
-    testImageFile = r'X:\Coding\Github\data\MNIST\raw\t10k-images-idx3-ubyte'
+    testImageFile = r'X:\Coding\Github\LearnDeepWithPyTorch\data\MNIST\raw\t10k-images-idx3-ubyte'
     _, _, _, images = mnist.load_image(testImageFile)
-    testLabelFile = r'X:\Coding\Github\data\MNIST\raw\t10k-labels-idx1-ubyte'
+    testLabelFile = r'X:\Coding\Github\LearnDeepWithPyTorch\data\MNIST\raw\t10k-labels-idx1-ubyte'
     _, labels = mnist.load_labels(testLabelFile)
-    mnist.visualaztion(images, labels, "./data/images/test/")
+    mnist.visualaztion(images, labels, "../data/images/test/")
 
 
 # 测试

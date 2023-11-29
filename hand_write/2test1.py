@@ -11,8 +11,26 @@ import torchvision.transforms as transforms
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 
-# 导入模型定义类
-from code.workForStu.model import FeedforwardNeuralNetModel
+import torch.nn as nn
+
+
+# 定义前馈神经网络模型
+class FeedforwardNeuralNetModel(nn.Module):
+    def __init__(self):
+        super(FeedforwardNeuralNetModel, self).__init__()
+        # 28x28 = 784
+        self.fc1 = nn.Linear(784, 128)
+        self.relu = nn.ReLU()  # relu 激活函数
+        self.fc2 = nn.Linear(128, 10)  # 输出10，0-9
+
+    def forward(self, x):
+        # Flatten the image
+        x = x.view(-1, 784)
+        out = self.fc1(x)
+        out = self.relu(out)
+        out = self.fc2(out)
+        return out
+
 
 # 设备配置
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -25,12 +43,12 @@ transform = transforms.Compose([
 ])
 
 # 下载数据集假如没下载，root目录下存在就不用重复下载
-test_dataset = MNIST(root='../../data', train=False, transform=transform, download=False)
+test_dataset = MNIST(root='../data', train=False, transform=transform, download=False)
 test_loader = DataLoader(dataset=test_dataset, batch_size=64, shuffle=False)
 
 # 加载模型
 model = FeedforwardNeuralNetModel().to(device)
-model.load_state_dict(torch.load('./hand_write_model.pth', map_location=device))
+model.load_state_dict(torch.load('./model/hand_write_model.pth', map_location=device))
 model.eval()
 
 # 测试模型

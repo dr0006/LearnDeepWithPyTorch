@@ -27,8 +27,8 @@ transform = transforms.Compose([
 ])
 
 # 下载数据集
-train_dataset = MNIST(root='../../data', train=True, transform=transform, download=True)
-test_dataset = MNIST(root='../../data', train=False, transform=transform, download=True)
+train_dataset = MNIST(root='../data', train=True, transform=transform, download=False)
+test_dataset = MNIST(root='../data', train=False, transform=transform, download=False)
 
 # 划分训练集为训练集和验证集
 train_dataset, val_dataset = random_split(train_dataset, [55000, 5000])

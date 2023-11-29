@@ -1,5 +1,5 @@
 import numpy as np
-import paddle
+import paddle  # pip install paddlepaddle
 from paddle.vision.transforms import Normalize
 from PIL import Image
 import os
@@ -36,7 +36,7 @@ model = multilayer_perceptron()
 learning_rate = 0.001  # 学习率
 EPOCH_NUM = 1  # 训练轮数
 BATCH_SIZE = 128  # 每批数据大小
-model_save_dir = "./hand_inference_model"  # 模型保存路径
+model_save_dir = "hand_inference_model"  # 模型保存路径
 
 # 设置优化器
 optimizer = paddle.optimizer.Adam(learning_rate=learning_rate, parameters=model.parameters())
@@ -105,8 +105,7 @@ def infer(model, params_file_path, infer_path):
 
 
 # 加载模型参数并进行预测
-# infer_path = '../../data/infer_3.png'  # 待推理图像的路径
-infer_path = '../../MNIST_test/4.png'  # 待推理图像的路径
+infer_path = r'X:\Coding\Github\LearnDeepWithPyTorch\data\images\test\0_7.png'  # 待推理图像的路径
 params_file_path = os.path.join(model_save_dir, 'mnist.pdparams')  # 模型参数路径
 prediction = infer(model, params_file_path, infer_path)  # 进行预测
 print(f"推测的图像标签为: {prediction}")  # 输出预测结果

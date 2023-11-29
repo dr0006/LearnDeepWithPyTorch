@@ -8,9 +8,9 @@
 import torch
 from PIL import Image
 
-from code.hand_write_CNN.config import transformers
-from code.hand_write_CNN.model import get_default_device, to_device
-from code.hand_write_CNN.tools.my_tools import class_index
+from hand_write_CNN.config import transformers
+from hand_write_CNN.model import get_default_device, to_device
+from hand_write_CNN.tools.my_tools import class_index
 
 import matplotlib.pyplot as plt
 
