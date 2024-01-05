@@ -155,3 +155,12 @@ cython_debug/
 /data/MNIST/
 /data/
 /data/images/
+/课设/data/
+/课设/6/data/
+/课设/6/csv_plot/
+/课设/6/model_file/
+/课设/6/runs/
+/课设/84.3%_cifar-10model.pth
+/课设/85.7%_cifar-10model.pth
+/课设/model/
+/book/data/
