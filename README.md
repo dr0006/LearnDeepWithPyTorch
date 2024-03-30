@@ -42,7 +42,18 @@
 `IMDb数据集:`  [下载地址](https://ai.stanford.edu/~amaas/data/sentiment/)  
 电影评论,标签为消极或者积极。
 
+### 课设
 
-### 课设  
+cifar-10 数据进行图片分类  
+ResNet18和50、自定义的CNN网络结构  
+采取tensorboard 进行训练可视化等操作  
+MyResnet以及聚类的方法的探索使用
 
-cifar-10 数据进行图片分类
+1. [项目所在文件夹](./课设)
+2. [IPYNB文件](./课设/6/IPYNB)
+3. [mean聚类](./课设/6/mean)
+4. [训练预测可视化图片](./课设/6/plot_pic)
+
+![img](./课设/heatmap.png)  
+![img](./课设/6/plot_pic/pre1.png)    
+![img](./课设/6/plot_pic/plots.png)  
